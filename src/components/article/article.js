@@ -125,7 +125,7 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
-const articleMaker = (article) => {
+function articleMaker(article) {
   const articleDiv = document.createElement("div");
   articleDiv.classList.add("article");
 
@@ -158,10 +158,10 @@ const articleMaker = (article) => {
 
   articleDiv.appendChild(expandBtn);
   return articleDiv;
-};
+}
+
+const articles = document.querySelector(".articles");
 
 for (let i = 0; i < data.length; i++) {
-  document
-    .querySelector(".articles")
-    .appendChild(articleMaker(Object.values(data)[i]));
+  articles.appendChild(articleMaker(Object.values(data)[i]));
 }
